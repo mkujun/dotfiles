@@ -11,6 +11,8 @@ set directory=C:\Users\markok\VimTemp
 set undodir=C:\Users\markok\VimTemp
 set writebackup
 
-" moving line up or down (only in normal mode)
+" moving line(s) up or down 
 nnoremap <S-j> :m .+1<CR>==
 nnoremap <S-k> :m .-2<CR>==
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
