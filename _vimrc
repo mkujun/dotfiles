@@ -1,8 +1,13 @@
 "--gvim based .vimrc file for windows machine--
 
 colorscheme slate
-
 set relativenumber
+syntax enable
+set nowrap
+
+set ignorecase
+set hlsearch
+set incsearch
 
 set backup
 set backupdir=C:\Users\markok\VimTemp
@@ -16,8 +21,3 @@ nnoremap <S-j> :m .+1<CR>==
 nnoremap <S-k> :m .-2<CR>==
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
-
-"ignore case while searching
-set ignorecase
-
-set nowrap
