@@ -1,8 +1,12 @@
-" moving line(s) up or down
-nnoremap <S-j> :m+<CR>==
-nnoremap <S-k> :m-2<CR>==
-vnoremap <S-j> :m '>+1<CR>gv=gv
-vnoremap <S-k> :m '<-2<CR>gv=gv
+"----------Mappings-------------"
 
-"ignore case while searching
-set ignorecase
+nnoremap <S-j> ddp 							"moving lines in visual mode or line in normal mode
+nnoremap <S-k> dd-P
+vnoremap <S-j> dpV']
+vnoremap <S-k> d-PV']
+
+"----------Search-------------"
+
+set hlsearch								"highlighting search results
+set ignorecase 								"ignore case while searching
+set incsearch								"search while typing"
