@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
+Plugin 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -17,7 +18,7 @@ filetype plugin indent on    " required
 "mapping for nerdtree toggle
 map <C-n> :NERDTreeToggle<CR>
 
-colorscheme gruvbox
+colorscheme base16-default-dark
 set relativenumber
 syntax enable
 set nowrap
