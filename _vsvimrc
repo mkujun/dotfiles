@@ -1,9 +1,11 @@
-" moving line(s) up or down
+"----------Mappings-------------"
 
+" moving line(s) and keeping indentation
 nnoremap <S-j> ddp
 nnoremap <S-k> dd-P
 vnoremap <S-j> dpV']
 vnoremap <S-k> d-PV']
+
 
 "ignore case while searching
 set ignorecase
