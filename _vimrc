@@ -1,28 +1,8 @@
-set nocompatible              " be iMproved, required
-
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/plugin/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'morhetz/gruvbox'
-Plugin 'chriskempson/base16-vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-
-"mapping for nerdtree toggle
-map <C-n> :NERDTreeToggle<CR>
-
-colorscheme gruvbox
 set relativenumber
 syntax enable
 set nowrap
+
+colorscheme slate
 
 "search
 set ignorecase
@@ -39,3 +19,10 @@ nnoremap <S-j> :m .+1<CR>==
 nnoremap <S-k> :m .-2<CR>==
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
+
+"font for gvim
+set guifont=Consolas:h12
+
+"copy paste windows style
+nnoremap <C-V> "+gP
+vnoremap <C-V> "+gP
