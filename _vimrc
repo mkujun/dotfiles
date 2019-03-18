@@ -23,6 +23,11 @@ vnoremap <S-k> :m '<-2<CR>gv=gv
 "font for gvim
 set guifont=Consolas:h12
 
-"copy paste windows style
+"paste in windows style
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
+
+"tabs
+set tabstop=4
+set shiftwidth=4
+set expandtab
