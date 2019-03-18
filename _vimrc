@@ -26,3 +26,5 @@ set guifont=Consolas:h12
 "copy paste windows style
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
+
+set tabstop=4
