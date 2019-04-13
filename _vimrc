@@ -1,3 +1,21 @@
+"plugins
+call plug#begin('~/.vim/plugged')
+Plug 'kien/ctrlp.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'scrooloose/nerdtree'
+call plug#end()
+
+"ctrlp plugin
+"ignore folder(s) configuration for ctrlp plugin
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  'node_modules',
+  \ }
+  
+"nerdtree plugin
+"nerdtree toggle
+map <C-n> :NERDTreeToggle<CR>
+
 set relativenumber
 syntax enable
 set nowrap
@@ -31,3 +49,7 @@ vnoremap <C-V> "+gP
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+"change between vertical splits
+map <S-h> <C-W>h
+map <S-l> <C-W>l
