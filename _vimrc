@@ -53,3 +53,6 @@ set expandtab
 "change between vertical splits
 map <S-h> <C-W>h
 map <S-l> <C-W>l
+
+"backspace in insert mode
+set backspace=2
