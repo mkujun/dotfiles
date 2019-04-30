@@ -46,6 +46,10 @@ vnoremap <S-k> :m '<-2<CR>gv=gv
 "font for gvim
 set guifont=Consolas:h12
 
+"gvim gui setting
+set guioptions-=T
+set guioptions-=r
+
 "paste in windows style
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
