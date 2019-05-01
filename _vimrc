@@ -1,10 +1,9 @@
-"plugins
+"plugins (vim plug)
 call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'chriskempson/base16-vim'
-
 Plug 'scrooloose/nerdtree'
 call plug#end()
 
@@ -17,9 +16,11 @@ let g:ctrlp_custom_ignore = {
 "leader key is space
 let mapleader=" "
 
-"nerdtree plugin
 "nerdtree toggle
-map <leader>n :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
+
+"no highlighting
+map <leader>n :noh<CR>
 
 set relativenumber
 syntax enable
@@ -29,6 +30,7 @@ colorscheme base16-default-dark
 
 "search
 set ignorecase
+set smartcase
 set hlsearch
 set incsearch
 
