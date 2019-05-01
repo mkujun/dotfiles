@@ -51,6 +51,7 @@ set guifont=Consolas:h12
 "gvim gui setting
 set guioptions-=T
 set guioptions-=r
+set guioptions-=m
 
 "paste in windows style
 nnoremap <C-V> "+gP
