@@ -70,3 +70,6 @@ set backspace=2
 
 "disable bells
 set belloff=all
+
+"start gvim fullscreen
+au GUIEnter * simalt ~x
