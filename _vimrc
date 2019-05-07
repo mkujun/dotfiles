@@ -23,6 +23,7 @@ map <C-n> :NERDTreeToggle<CR>
 map <leader>n :noh<CR>
 
 set relativenumber
+set number
 syntax enable
 set nowrap
 
