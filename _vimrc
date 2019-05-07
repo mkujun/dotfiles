@@ -53,9 +53,13 @@ set guioptions-=T
 set guioptions-=r
 set guioptions-=m
 
-"paste in windows style
+"copy paste in windows style
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 
 "tabs
 set tabstop=4
