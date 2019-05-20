@@ -5,7 +5,16 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'chriskempson/base16-vim'
 Plug 'scrooloose/nerdtree'
+Plug 'w0rp/ale'
 call plug#end()
+
+
+"ale plugin
+"runs eslint
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_javascript_eslint_executable='npx eslint'
 
 "ctrlp plugin
 "ignore folder(s) configuration for ctrlp plugin
