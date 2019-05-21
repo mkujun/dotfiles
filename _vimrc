@@ -6,6 +6,7 @@ Plug 'mxw/vim-jsx'
 Plug 'chriskempson/base16-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 
@@ -36,7 +37,8 @@ set number
 syntax enable
 set nowrap
 
-colorscheme base16-default-dark
+"colorscheme base16-default-dark
+colorscheme codedark
 
 "search
 set ignorecase
