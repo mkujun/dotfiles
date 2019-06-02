@@ -9,7 +9,6 @@ Plug 'w0rp/ale'
 Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
-
 "ale plugin
 "runs eslint
 let g:ale_linters = {
@@ -32,13 +31,15 @@ map <C-n> :NERDTreeToggle<CR>
 "no highlighting
 map <leader>n :noh<CR>
 
+"numbers
 set relativenumber
 set number
+
 syntax enable
 set nowrap
 
-"colorscheme base16-default-dark
-colorscheme codedark
+colorscheme base16-default-dark
+"colorscheme codedark
 
 "search
 set ignorecase
@@ -52,10 +53,10 @@ set nobackup
 set nowritebackup
 
 "moving line(s) up or down 
-nnoremap <S-j> :m .+1<CR>==
-nnoremap <S-k> :m .-2<CR>==
-vnoremap <S-j> :m '>+1<CR>gv=gv
-vnoremap <S-k> :m '<-2<CR>gv=gv
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 "font for gvim
 set guifont=Consolas:h12
@@ -78,9 +79,15 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-"change between vertical splits
+"change between splits
 map <S-h> <C-W>h
 map <S-l> <C-W>l
+map <S-j> <C-W>j
+map <S-k> <C-W>k
+
+"new blank splits
+set splitbelow
+set splitright
 
 "backspace in insert mode
 set backspace=2
