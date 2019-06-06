@@ -1,8 +1,8 @@
 "moving line(s) and keeping indentation
-nnoremap <S-j> ddp
-nnoremap <S-k> dd-P
-vnoremap <S-j> dpV']
-vnoremap <S-k> d-PV']
+nnoremap <C-j> ddp
+nnoremap <C-k> dd-P
+vnoremap <C-j> dpV']
+vnoremap <C-k> d-PV']
 
 "search options
 set ignorecase

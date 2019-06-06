@@ -1,16 +1,17 @@
 "plugins (vim plug)
 call plug#begin('~/.vim/plugged')
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'chriskempson/base16-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'tomasiser/vim-code-dark'
+Plug 'Valloric/MatchTagAlways'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 "ale plugin
-"runs eslint
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
@@ -21,9 +22,22 @@ let g:ale_javascript_eslint_executable='npx eslint'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  'node_modules',
   \ }
-  
+
+let g:mta_filetypes = {
+\ 'javascript.jsx': 1,
+\ 'html' : 1,
+\ 'xhtml' : 1,
+\ 'xml' : 1,
+\ 'jinja' : 1,
+\ }
+
+set encoding=utf-8
+
 "leader key is space
 let mapleader=" "
+
+"source out vimrc
+map <leader>s :source ~/_vimrc<CR>
 
 "nerdtree toggle
 map <C-n> :NERDTreeToggle<CR>
@@ -53,10 +67,10 @@ set nobackup
 set nowritebackup
 
 "moving line(s) up or down 
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
 
 "font for gvim
 set guifont=Consolas:h12
@@ -75,8 +89,8 @@ vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
 "tabs
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 "change between splits
