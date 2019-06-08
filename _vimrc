@@ -9,6 +9,7 @@ Plug 'w0rp/ale'
 Plug 'tomasiser/vim-code-dark'
 Plug 'Valloric/MatchTagAlways'
 Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 "ale plugin
@@ -23,6 +24,7 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  'node_modules',
   \ }
 
+"matchTagAlways settings
 let g:mta_filetypes = {
 \ 'javascript.jsx': 1,
 \ 'html' : 1,
@@ -30,6 +32,9 @@ let g:mta_filetypes = {
 \ 'xml' : 1,
 \ 'jinja' : 1,
 \ }
+
+" you complete me ignore enter
+let g:ycm_key_list_stop_completion = [ '<C-y>', '<Enter>' ]
 
 set encoding=utf-8
 
