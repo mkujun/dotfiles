@@ -72,10 +72,10 @@ map <leader>s :source ~/_vimrc<CR>
 map <leader>n :noh<CR>
 
 " moving line(s) up or down 
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+nnoremap <S-d> :m .+1<CR>==
+nnoremap <S-u> :m .-2<CR>==
+vnoremap <S-d> :m '>+1<CR>gv=gv
+vnoremap <S-u> :m '<-2<CR>gv=gv
 
 " change between splits
 map <S-h> <C-W>h
