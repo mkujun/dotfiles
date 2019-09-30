@@ -6,13 +6,14 @@ Plug 'mxw/vim-jsx'
 Plug 'chriskempson/base16-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
-Plug 'tomasiser/vim-code-dark'
-Plug 'Valloric/MatchTagAlways'
-Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-vinegar'
 call plug#end()
 
 " plugins configuration
+"
+" prevent nerdtree from hijacking vinegear
+let NERDTreeHijackNetrw = 0
+
 " ale eslinter
 let g:ale_linters = {
   \   'javascript': ['eslint'],
@@ -38,7 +39,7 @@ let g:mta_filetypes = {
   \ }
 
 " you complete me ignore enter
-let g:ycm_key_list_stop_completion = [ '<C-y>', '<Enter>' ]
+" let g:ycm_key_list_stop_completion = [ '<C-y>', '<Enter>' ]
 
 " various vim settings
 syntax enable
@@ -63,25 +64,30 @@ set splitright
 set backspace=2
 set belloff=all
 
-" mappings
-map <C-n> :NERDTreeToggle<CR>
+" set syntax highlighting for .cshtml files
+autocmd BufNewFile,BufRead *.cshtml set syntax=html
 
-" leader key
-let mapleader=" "
-map <leader>s :source ~/_vimrc<CR>
-map <leader>n :noh<CR>
+" source vimrc on save
+autocmd BufWritePost _vimrc source %
+
+" space is leader key
+let mapleader="\<Space>"
+
+nnoremap <leader>v :e ~/_vimrc<CR>
+nnoremap <leader>n :noh<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 
 " moving line(s) up or down 
-nnoremap <S-d> :m .+1<CR>==
-nnoremap <S-u> :m .-2<CR>==
-vnoremap <S-d> :m '>+1<CR>gv=gv
-vnoremap <S-u> :m '<-2<CR>gv=gv
+nnoremap <S-j> :m .+1<CR>==
+nnoremap <S-k> :m .-2<CR>==
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
 
 " change between splits
 map <S-h> <C-W>h
 map <S-l> <C-W>l
-map <S-j> <C-W>j
-map <S-k> <C-W>k
+map <leader>j <C-W>j
+map <leader>k <C-W>k
 
 " copy paste in windows style
 nnoremap <C-V> "+gP
@@ -91,19 +97,19 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
+" todo: if it has gui running..., put colors and gvim options there...
 " colors
 colorscheme base16-default-dark
 
 " gvim options
-set guifont=Consolas:h12
+set guifont=Consolas:h16
 set guioptions-=T
 set guioptions-=r
 set guioptions-=m
 au GUIEnter * simalt ~x
 
+
 " automatic closing the brackets
-inoremap " ""<left>
-inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
