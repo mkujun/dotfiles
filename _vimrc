@@ -7,6 +7,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-vinegar'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " plugins configuration
@@ -28,18 +29,6 @@ let g:ctrlp_custom_ignore = {
 
 " ignore gitignore
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-" matchTagAlways settings
-let g:mta_filetypes = {
-  \ 'javascript.jsx': 1,
-  \ 'html' : 1,
-  \ 'xhtml' : 1,
-  \ 'xml' : 1,
-  \ 'jinja' : 1,
-  \ }
-
-" you complete me ignore enter
-" let g:ycm_key_list_stop_completion = [ '<C-y>', '<Enter>' ]
 
 " various vim settings
 syntax enable
@@ -63,6 +52,11 @@ set splitbelow
 set splitright
 set backspace=2
 set belloff=all
+
+" vim wiki required settings
+set nocompatible
+filetype plugin on
+syntax on
 
 " set syntax highlighting for .cshtml files
 autocmd BufNewFile,BufRead *.cshtml set syntax=html
