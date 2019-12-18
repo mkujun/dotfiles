@@ -30,16 +30,11 @@ let g:ctrlp_custom_ignore = {
 " ignore gitignore
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-" vimwiki markdown as default
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-
 " various vim settings
 syntax enable
 set encoding=utf-8
 set relativenumber
 set number
-set nowrap
 set ignorecase
 set smartcase
 set showmatch
@@ -56,6 +51,7 @@ set splitbelow
 set splitright
 set backspace=2
 set belloff=all
+set showbreak=>>>
 
 " vim wiki required settings
 set nocompatible
@@ -100,12 +96,12 @@ imap <C-v> <ESC>"+pa
 colorscheme base16-default-dark
 
 " gvim options
-set guifont=Consolas:h16
+"set guifont=Consolas:h16
+set guifont=Source_Code_Pro:h14
 set guioptions-=T
 set guioptions-=r
 set guioptions-=m
 au GUIEnter * simalt ~x
-
 
 " automatic closing the brackets
 inoremap ( ()<left>
