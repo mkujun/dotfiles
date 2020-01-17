@@ -1,8 +1,0 @@
-custom keybinding for visual studio code (.deb based distro)
-swapping caps lock with esc
-
-keybindings.json
-// Place your key bindings in this file to overwrite the defaults
-[ {"key": "capslock", "command": "extension.vim_escape",
-"when": "editorTextFocus && vim.active && !inDebugRepl" }
-]

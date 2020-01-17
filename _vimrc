@@ -1,34 +1,14 @@
 " plugins
 call plug#begin('~/.vim/plugged')
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'chriskempson/base16-vim'
 Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
 Plug 'tpope/vim-vinegar'
 Plug 'vimwiki/vimwiki'
+Plug 'ctrlpvim/ctrlp.vim/'
 call plug#end()
 
-" plugins configuration
-"
 " prevent nerdtree from hijacking vinegear
 let NERDTreeHijackNetrw = 0
-
-" ale eslinter
-let g:ale_linters = {
-  \   'javascript': ['eslint'],
-  \}
-
-let g:ale_javascript_eslint_executable='npx eslint'
-
-" ignore folder(s) configuration for ctrlp plugin
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  'node_modules',
-  \ }
-
-" ignore gitignore
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " various vim settings
 syntax enable
@@ -52,6 +32,7 @@ set splitright
 set backspace=2
 set belloff=all
 set showbreak=>>>
+set foldmethod=indent
 
 " vim wiki required settings
 set nocompatible
