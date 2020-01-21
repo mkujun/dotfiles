@@ -1,15 +1,19 @@
 " plugins
-call plug#begin('~/.vim/plugged')
-Plug 'chriskempson/base16-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-vinegar'
-Plug 'vimwiki/vimwiki'
-Plug 'ctrlpvim/ctrlp.vim/'
-call plug#end()
+if has("gui_running")
+  call plug#begin('~/.vim/plugged')
+  Plug 'chriskempson/base16-vim'
+  Plug 'scrooloose/nerdtree'
+  Plug 'tpope/vim-vinegar'
+  Plug 'vimwiki/vimwiki'
+  Plug 'ctrlpvim/ctrlp.vim/'
+  call plug#end()
+endif
 
 " prevent nerdtree from hijacking vinegear
 let NERDTreeHijackNetrw = 0
 
+" ctrlp search only current directory
+let g:ctrlp_working_path_mode = 'ra'
 " various vim settings
 syntax enable
 set encoding=utf-8
@@ -72,9 +76,10 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
-" todo: if it has gui running..., put colors and gvim options there...
 " colors
-colorscheme base16-default-dark
+if has("gui_running")
+  colorscheme base16-default-dark
+endif
 
 " gvim options
 "set guifont=Consolas:h16
@@ -90,3 +95,5 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
+" todo :monthly snippet with inserted days
