@@ -14,6 +14,7 @@ let NERDTreeHijackNetrw = 0
 
 " ctrlp search only current directory
 let g:ctrlp_working_path_mode = 'ra'
+
 " various vim settings
 syntax enable
 set encoding=utf-8
@@ -37,8 +38,7 @@ set backspace=2
 set belloff=all
 set showbreak=>>>
 set foldmethod=indent
-
-" vim wiki required settings
+set cursorline
 set nocompatible
 filetype plugin on
 syntax on
@@ -97,3 +97,23 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 " todo :monthly snippet with inserted days
+
+" Dim inactive windows using 'colorcolumn' setting
+function! s:DimInactiveWindows()
+  for i in range(1, tabpagewinnr(tabpagenr(), '$'))
+    let l:range = ""
+    if i != winnr()
+      if &wrap
+        let l:width=256 " max
+      else
+        let l:width=winwidth(i)
+      endif
+      let l:range = join(range(1, l:width), ',')
+    endif
+    call setwinvar(i, '&colorcolumn', l:range)
+  endfor
+endfunction
+augroup DimInactiveWindows
+  au!
+  au WinEnter * call s:DimInactiveWindows()
+augroup END
