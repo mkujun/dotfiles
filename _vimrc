@@ -6,6 +6,9 @@ if has("gui_running")
   Plug 'tpope/vim-vinegar'
   Plug 'vimwiki/vimwiki'
   Plug 'ctrlpvim/ctrlp.vim/'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'bling/vim-bufferline'
   call plug#end()
 endif
 
@@ -14,6 +17,13 @@ let NERDTreeHijackNetrw = 0
 
 " ctrlp search only current directory
 let g:ctrlp_working_path_mode = 'ra'
+
+" airline customization
+let g:airline_theme='minimalist'
+let g:airline#extensions#whitespace#enabled = 0
+
+" bufferline customization
+let g:bufferline_echo = 0
 
 " various vim settings
 syntax enable
@@ -96,7 +106,7 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-" todo :monthly snippet with inserted days
+" todo: monthly snippet with inserted days
 
 " Dim inactive windows using 'colorcolumn' setting
 function! s:DimInactiveWindows()
