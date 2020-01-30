@@ -9,6 +9,7 @@ if has("gui_running")
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'bling/vim-bufferline'
+  Plug 'dreadnaut/vim-bargreybars'
   call plug#end()
 endif
 
@@ -21,6 +22,7 @@ let g:ctrlp_working_path_mode = 'ra'
 " airline customization
 let g:airline_theme='minimalist'
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline_section_a=''
 
 " bufferline customization
 let g:bufferline_echo = 0
@@ -97,7 +99,9 @@ set guifont=Source_Code_Pro:h14
 set guioptions-=T
 set guioptions-=r
 set guioptions-=m
+set guicursor+=n-v-c:blinkon0
 au GUIEnter * simalt ~x
+
 
 " automatic closing the brackets
 inoremap ( ()<left>
@@ -106,7 +110,8 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-" todo: monthly snippet with inserted days
+" todo: monthly snippet with inserted days, clear work week separation
+" todo: bufferline at the top
 
 " Dim inactive windows using 'colorcolumn' setting
 function! s:DimInactiveWindows()
