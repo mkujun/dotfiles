@@ -27,7 +27,7 @@ let g:airline_section_a=''
 " bufferline customization
 let g:bufferline_echo = 0
 
-" various vim settings
+" vim settings
 syntax enable
 set encoding=utf-8
 set relativenumber
@@ -63,7 +63,6 @@ autocmd BufWritePost _vimrc source %
 
 " space is leader key
 let mapleader="\<Space>"
-
 nnoremap <leader>v :e ~/_vimrc<CR>
 nnoremap <leader>n :noh<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
@@ -80,7 +79,7 @@ map <S-l> <C-W>l
 map <leader>j <C-W>j
 map <leader>k <C-W>k
 
-" copy paste in windows style
+" copy paste clipboard
 nnoremap <C-V> "+gP
 vnoremap <C-V> "+gP
 vmap <C-c> "+yi
@@ -88,20 +87,16 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
-" colors
+" gvim settings
 if has("gui_running")
   colorscheme base16-default-dark
+  set guifont=Source_Code_Pro:h14
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=m
+  set guicursor+=n-v-c:blinkon0
+  au GUIEnter * simalt ~x
 endif
-
-" gvim options
-"set guifont=Consolas:h16
-set guifont=Source_Code_Pro:h14
-set guioptions-=T
-set guioptions-=r
-set guioptions-=m
-set guicursor+=n-v-c:blinkon0
-au GUIEnter * simalt ~x
-
 
 " automatic closing the brackets
 inoremap ( ()<left>
@@ -110,10 +105,7 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-" todo: monthly snippet with inserted days, clear work week separation
-" todo: bufferline at the top
-
-" Dim inactive windows using 'colorcolumn' setting
+" Dim inactive windows
 function! s:DimInactiveWindows()
   for i in range(1, tabpagewinnr(tabpagenr(), '$'))
     let l:range = ""
