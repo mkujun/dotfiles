@@ -17,7 +17,7 @@ endif
 let NERDTreeHijackNetrw = 0
 
 " ctrlp search only current directory
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 1
 
 " airline customization
 let g:airline_theme='minimalist'
@@ -26,6 +26,12 @@ let g:airline_section_a=''
 
 " bufferline customization
 let g:bufferline_echo = 0
+
+"set wildignore+=*.pdf
+"set wildignore+=*.ppt
+"set wildignore+=*.pptx
+"set wildignore+=Documents/*
+"noremap <C-a> :CtrlP ~/vimwiki/<CR>
 
 " vim settings
 syntax enable
@@ -50,10 +56,12 @@ set backspace=2
 set belloff=all
 set showbreak=>>>
 set foldmethod=indent
+set nofoldenable
 set cursorline
 set nocompatible
 filetype plugin on
 syntax on
+
 
 " set syntax highlighting for .cshtml files
 autocmd BufNewFile,BufRead *.cshtml set syntax=html
