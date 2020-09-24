@@ -107,8 +107,8 @@ set statusline+=%f "path to file"
 set statusline+=\  "blank space"
 set statusline+=%m "modifier, indicates '+' sign if file changed "
 
-" vertical split splitting line is thinner
-hi VertSplit guibg=none
+" vertical split splitting line is the same color as background
+hi VertSplit guibg=bg guifg=bg
 
 " window position stays the same after changing buffers
 autocmd! BufWinLeave * let b:winview = winsaveview()
