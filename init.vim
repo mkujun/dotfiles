@@ -113,3 +113,9 @@ hi VertSplit guibg=bg guifg=bg
 " window position stays the same after changing buffers
 autocmd! BufWinLeave * let b:winview = winsaveview()
 autocmd! BufWinEnter * if exists('b:winview') | call winrestview(b:winview) | unlet b:winview
+
+" only show cursorline in active buffer
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
