@@ -14,7 +14,7 @@ call plug#end()
 " color
 set termguicolors
 set t_Co=256
-colorscheme base16-default-dark
+colorscheme base16-tomorrow-night
 
 " folding
 " {} motion will jump over folds
@@ -99,7 +99,7 @@ endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
 "highlight statusline
-hi StatusLine guibg=darkred
+"hi StatusLine guibg=darkred
 
 "statusline
 set statusline=
