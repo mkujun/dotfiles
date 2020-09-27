@@ -122,3 +122,6 @@ augroup CursorLine
   au!
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
+
+set colorcolumn=80
+let &colorcolumn=join(range(81, 999),",")     " 80+ columns are indicated differently
