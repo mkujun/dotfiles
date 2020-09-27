@@ -106,6 +106,7 @@ set statusline=
 set statusline+=%f "path to file"
 set statusline+=\  "blank space"
 set statusline+=%m "modifier, indicates '+' sign if file changed "
+set statusline+=%y
 
 " vertical split splitting line is the same color as background
 hi VertSplit guibg=bg guifg=bg
