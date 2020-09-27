@@ -98,8 +98,10 @@ endfunction
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
-"highlight statusline
-"hi StatusLine guibg=darkred
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 "statusline
 set statusline=
