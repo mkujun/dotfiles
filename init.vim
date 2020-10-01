@@ -113,6 +113,9 @@ set statusline+=%y
 " vertical split splitting line is the same color as background
 hi VertSplit guibg=bg guifg=bg
 
+"set fillchars+=vert:│
+"hi VertSplit ctermbg=NONE guibg=none
+
 " window position stays the same after changing buffers
 autocmd! BufWinLeave * let b:winview = winsaveview()
 autocmd! BufWinEnter * if exists('b:winview') | call winrestview(b:winview) | unlet b:winview
@@ -125,3 +128,5 @@ augroup CursorLine
 
 set colorcolumn=80
 let &colorcolumn=join(range(81, 999),",")     " 80+ columns are indicated differently
+
+highlight link EndOfBuffer ColorColumn
