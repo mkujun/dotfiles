@@ -9,6 +9,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'junegunn/fzf.vim'
   Plug 'Yggdroot/indentLine'
   Plug 'tpope/vim-vinegar'
+  Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " color
@@ -103,15 +104,24 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+"statusline highlight group
+hi User1 guibg=white guifg=black
+"guibg is the grayish color of the statusline
+hi User2 guibg=#373b41 guifg=white
+
 "statusline
-set statusline=
+set statusline= "begining of the statusline
+set statusline+=%1* "set statusline group"
 set statusline+=%f "path to file"
 set statusline+=\  "blank space"
+set statusline+=%2* "set statusline group 2 for arrow symbol
+set statusline+=
+set statusline+=%* "reset statusline group"
 set statusline+=%m "modifier, indicates '+' sign if file changed "
 set statusline+=%y
 
 " vertical split splitting line is the same color as background
-hi VertSplit guibg=bg guifg=bg
+"hi VertSplit guibg=bg guifg=bg
 
 "set fillchars+=vert:│
 "hi VertSplit ctermbg=NONE guibg=none
