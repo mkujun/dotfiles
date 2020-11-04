@@ -17,9 +17,10 @@ set termguicolors
 set t_Co=256
 colorscheme base16-tomorrow-night
 
+" {} motion wont open fold even if it has empty lines in it
+set foldopen-=block 
+
 " folding
-" {} motion will jump over folds
-set foldopen=block
 set foldmethod=indent
 set foldlevel=1
 
@@ -112,19 +113,25 @@ hi User2 guibg=#373b41 guifg=white
 "statusline
 set statusline= "begining of the statusline
 set statusline+=%1* "set statusline group"
-set statusline+=%f "path to file"
+set statusline+=\  "blank space"
+"set statusline+=%t "file name (tail)"
 set statusline+=\  "blank space"
 set statusline+=%2* "set statusline group 2 for arrow symbol
 set statusline+=
 set statusline+=%* "reset statusline group"
+set statusline+=\  "blank space"
+set statusline+=%f
+set statusline+=\  "blank space"
 set statusline+=%m "modifier, indicates '+' sign if file changed "
 set statusline+=%y
 
 " vertical split splitting line is the same color as background
 "hi VertSplit guibg=bg guifg=bg
 
-"set fillchars+=vert:│
-"hi VertSplit ctermbg=NONE guibg=none
+"changed char to vertical split
+set fillchars+=vert:│
+"make color of vsp bar transparent
+hi VertSplit ctermbg=NONE guibg=none
 
 " window position stays the same after changing buffers
 autocmd! BufWinLeave * let b:winview = winsaveview()
