@@ -17,12 +17,14 @@ set termguicolors
 set t_Co=256
 colorscheme base16-tomorrow-night
 
-" {} motion wont open fold even if it has empty lines in it
-set foldopen-=block 
-
 " folding
 set foldmethod=indent
 set foldlevel=1
+
+" {} motion wont open fold even if it has empty lines in it
+" also blank lines will be skipped altogether
+nnoremap <expr> } foldclosed(search('^$', 'Wn')) == -1 ? "}" : "}j}"
+nnoremap <expr> { foldclosed(search('^$', 'Wnb')) == -1 ? "{" : "{k{"
 
 syntax on
 syntax enable
