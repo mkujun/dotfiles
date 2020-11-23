@@ -9,7 +9,6 @@ call plug#begin("~/.vim/plugged")
   Plug 'junegunn/fzf.vim'
   Plug 'Yggdroot/indentLine'
   Plug 'tpope/vim-vinegar'
-  Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " color
@@ -107,33 +106,14 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-"statusline highlight group
-hi User1 guibg=white guifg=black
-"guibg is the grayish color of the statusline
-hi User2 guibg=#373b41 guifg=white
+function Highlight_Statusline()
+  hi StatusLineNC guibg=bg
+endfunction
 
-"statusline
-set statusline= "begining of the statusline
-set statusline+=%1* "set statusline group"
-set statusline+=\  "blank space"
-"set statusline+=%t "file name (tail)"
-set statusline+=\  "blank space"
-set statusline+=%2* "set statusline group 2 for arrow symbol
-set statusline+=
-set statusline+=%* "reset statusline group"
-set statusline+=\  "blank space"
-set statusline+=%f
-set statusline+=\  "blank space"
-set statusline+=%m "modifier, indicates '+' sign if file changed "
-set statusline+=%y
+autocmd BufEnter * call Highlight_Statusline()
 
 " vertical split splitting line is the same color as background
-"hi VertSplit guibg=bg guifg=bg
-
-"changed char to vertical split
-set fillchars+=vert:│
-"make color of vsp bar transparent
-hi VertSplit ctermbg=NONE guibg=none
+hi VertSplit guibg=bg
 
 " window position stays the same after changing buffers
 autocmd! BufWinLeave * let b:winview = winsaveview()
@@ -149,3 +129,47 @@ set colorcolumn=80
 let &colorcolumn=join(range(81, 999),",")     " 80+ columns are indicated differently
 
 highlight link EndOfBuffer ColorColumn
+
+function! ActiveStatus()
+  let statusline="" "begining of the statusline
+  let statusline.="%1*" "set statusline group"
+  let statusline.="\ "  "blank space"
+  let statusline.="\ "  "blank space"
+  let statusline.="\ "  "blank space"
+  let statusline.="%2*" "set statusline group 2 for arrow symbol
+  let statusline.=""
+  let statusline.="%*" "reset statusline group"
+  let statusline.="\ "  "blank space"
+  let statusline.="%f"
+  let statusline.="\ "  "blank space"
+  let statusline.="%m" "modifier, indicates '+' sign if file changed "
+  let statusline.="%y"
+  let statusline.="%="
+  return statusline
+endfunction
+
+function! InactiveStatus()
+  let statusline="" "begining of the statusline
+  let statusline.="\ "  "blank space"
+  let statusline.="\ "  "blank space"
+  let statusline.="\ "  "blank space"
+  let statusline.="\ "  "blank space"
+  let statusline.="\ "  "blank space"
+  let statusline.="%f"
+  let statusline.="\ "  "blank space"
+  let statusline.="%m" "modifier, indicates '+' sign if file changed "
+  let statusline.="%y"
+  let statusline.="%="
+  return statusline
+endfunction
+
+set laststatus=2
+set statusline=%!ActiveStatus()
+hi User1 guibg=white guifg=black
+hi User2 guibg=#373b41 guifg=white
+
+augroup status
+  autocmd!
+  autocmd WinEnter * setlocal statusline=%!ActiveStatus()
+  autocmd WinLeave * setlocal statusline=%!InactiveStatus()
+augroup END
