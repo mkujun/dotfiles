@@ -14,7 +14,7 @@ call plug#end()
 " color
 set termguicolors
 set t_Co=256
-colorscheme base16-tomorrow-night
+colorscheme base16-default-dark
 
 " folding
 set foldmethod=indent
@@ -113,7 +113,7 @@ endfunction
 autocmd BufEnter * call Highlight_Statusline()
 
 " vertical split splitting line is the same color as background
-hi VertSplit guibg=bg
+"hi VertSplit guibg=bg
 
 " window position stays the same after changing buffers
 autocmd! BufWinLeave * let b:winview = winsaveview()
@@ -128,7 +128,7 @@ augroup CursorLine
 set colorcolumn=80
 let &colorcolumn=join(range(81, 999),",")     " 80+ columns are indicated differently
 
-highlight link EndOfBuffer ColorColumn
+"highlight link EndOfBuffer ColorColumn
 
 function! ActiveStatus()
   let statusline="" "begining of the statusline
