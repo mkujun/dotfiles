@@ -77,7 +77,7 @@ set hidden
 let mapleader="\<Space>"
 map <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>p :Files<CR>
+nnoremap <leader>p :GFiles<CR>
 nnoremap <leader>f :Ag<CR>
 
 " make backspace work like most other programs
