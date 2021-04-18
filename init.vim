@@ -144,7 +144,7 @@ function! ActiveStatus()
   let statusline.="\ "  "blank space"
   let statusline.="%m" "modifier, indicates '+' sign if file changed "
   let statusline.="%y"
-  let statusline.="%="
+  let statusline.="%"
   return statusline
 endfunction
 
@@ -173,3 +173,18 @@ augroup status
   autocmd WinEnter * setlocal statusline=%!ActiveStatus()
   autocmd WinLeave * setlocal statusline=%!InactiveStatus()
 augroup END
+
+
+" brief blinking in word under the cursor when using '/' search option ('n'
+" and N)
+nnoremap <silent> n n:call HLNext(0.1)<cr>
+nnoremap <silent> N N:call HLNext(0.1)<cr>
+
+function! HLNext (blinktime)
+   let target_pat = '\c\%#'.@/
+   let ring = matchadd('ErrorMsg', target_pat, 101)
+   redraw
+   exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+   call matchdelete(ring)
+   redraw
+endfunction
