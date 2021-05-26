@@ -9,6 +9,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'junegunn/fzf.vim'
   Plug 'Yggdroot/indentLine'
   Plug 'tpope/vim-vinegar'
+  Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " color
@@ -130,50 +131,51 @@ let &colorcolumn=join(range(81, 999),",")     " 80+ columns are indicated differ
 
 "highlight link EndOfBuffer ColorColumn
 
-function! ActiveStatus()
-  let statusline="" "begining of the statusline
-  let statusline.="%1*" "set statusline group"
-  let statusline.="\ "  "blank space"
-  let statusline.="\ "  "blank space"
-  let statusline.="\ "  "blank space"
-  let statusline.="%2*" "set statusline group 2 for arrow symbol
-  let statusline.=""
-  let statusline.="%*" "reset statusline group"
-  let statusline.="\ "  "blank space"
-  let statusline.="%f"
-  let statusline.="\ "  "blank space"
-  let statusline.="%m" "modifier, indicates '+' sign if file changed "
-  let statusline.="%y"
-  let statusline.="%"
-  return statusline
-endfunction
+"function! ActiveStatus()
+  "let statusline="" "begining of the statusline
+  "let statusline.="%1*" "set statusline group"
+  "let statusline.="\ "  "blank space"
+  "let statusline.="\ "  "blank space"
+  "let statusline.="\ "  "blank space"
+  "let statusline.="%2*" "set statusline group 2 for arrow symbol
+  "let statusline.=""
+  "let statusline.="%*" "reset statusline group"
+  "let statusline.="\ "  "blank space"
+  "let statusline.="%f"
+  "let statusline.="\ "  "blank space"
+  "let statusline.="%m" "modifier, indicates '+' sign if file changed "
+  "let statusline.="%y"
+  "let statusline.="%"
+  "return statusline
+"endfunction
 
-function! InactiveStatus()
-  let statusline="" "begining of the statusline
-  let statusline.="\ "  "blank space"
-  let statusline.="\ "  "blank space"
-  let statusline.="\ "  "blank space"
-  let statusline.="\ "  "blank space"
-  let statusline.="\ "  "blank space"
-  let statusline.="%f"
-  let statusline.="\ "  "blank space"
-  let statusline.="%m" "modifier, indicates '+' sign if file changed "
-  let statusline.="%y"
-  let statusline.="%="
-  return statusline
-endfunction
+"function! InactiveStatus()
+  "let statusline="" "begining of the statusline
+  "let statusline.="\ "  "blank space"
+  "let statusline.="\ "  "blank space"
+  "let statusline.="\ "  "blank space"
+  "let statusline.="\ "  "blank space"
+  "let statusline.="\ "  "blank space"
+  "let statusline.="%f"
+  "let statusline.="\ "  "blank space"
+  "let statusline.="%m" "modifier, indicates '+' sign if file changed "
+  "let statusline.="%y"
+  "let statusline.="%="
+  "return statusline
+"endfunction
 
 set laststatus=2
-set statusline=%!ActiveStatus()
-hi User1 guibg=white guifg=black
-hi User2 guibg=#373b41 guifg=white
+"set statusline=%!ActiveStatus()
+"hi User1 guibg=white guifg=black
+"hi User2 guibg=#373b41 guifg=white
 
 augroup status
   autocmd!
-  autocmd WinEnter * setlocal statusline=%!ActiveStatus()
-  autocmd WinLeave * setlocal statusline=%!InactiveStatus()
+  "autocmd WinEnter * setlocal statusline=%!ActiveStatus()
+  "autocmd WinLeave * setlocal statusline=%!InactiveStatus()
 augroup END
 
+set noshowmode
 
 " brief blinking in word under the cursor when using '/' search option ('n'
 " and N)
@@ -188,3 +190,23 @@ function! HLNext (blinktime)
    call matchdelete(ring)
    redraw
 endfunction
+
+let g:lightline = { 
+  \ 'colorscheme': 'wombat',
+       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
+ \ 'mode_map': {
+        \ 'n' : 'N',
+        \ 'i' : 'I',
+        \ 'R' : 'R',
+        \ 'v' : 'V',
+        \ 'V' : 'VL',
+        \ "\<C-v>": 'VB',
+        \ 'c' : 'C',
+        \ 's' : 'S',
+        \ 'S' : 'SL',
+        \ "\<C-s>": 'SB',
+        \ 't': 'T',
+        \ },
+\ }
+
