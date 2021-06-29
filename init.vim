@@ -10,6 +10,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'Yggdroot/indentLine'
   Plug 'tpope/vim-vinegar'
   Plug 'itchyny/lightline.vim'
+  Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " color
@@ -208,5 +209,8 @@ let g:lightline = {
         \ "\<C-s>": 'SB',
         \ 't': 'T',
         \ },
+ \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+\ }
 \ }
 
