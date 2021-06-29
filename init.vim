@@ -210,7 +210,10 @@ let g:lightline = {
         \ 't': 'T',
         \ },
  \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
-\ }
+  \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ],
+\ },
+\ 'component_function' : {
+\   'gitbranch': 'FugitiveHead'
+\}
 \ }
 
