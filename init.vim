@@ -217,3 +217,4 @@ let g:lightline = {
 \}
 \ }
 
+set clipboard=unnamedplus " yank also works with system clipboard
