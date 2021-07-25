@@ -82,6 +82,9 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>p :GFiles<CR>
 nnoremap <leader>f :Ag<CR>
 
+" jump to the first char in a line
+nnoremap <leader>l ^
+
 " make backspace work like most other programs
 set backspace=2
 " clear highlighted text
