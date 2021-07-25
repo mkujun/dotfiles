@@ -11,6 +11,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'tpope/vim-vinegar'
   Plug 'itchyny/lightline.vim'
   Plug 'tpope/vim-fugitive'
+  Plug 'blueyed/vim-diminactive/'
 call plug#end()
 
 " color
