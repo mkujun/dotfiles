@@ -221,3 +221,10 @@ let g:lightline = {
 \ }
 
 set clipboard=unnamedplus " yank also works with system clipboard
+
+" adds blinking when yanking lines (visual or normal mode)
+" this is neovim 0.5 feature
+augroup LuaHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
+augroup END
