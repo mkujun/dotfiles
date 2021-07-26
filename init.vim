@@ -7,7 +7,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'vimwiki/vimwiki'
   Plug 'junegunn/fzf', { 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
-  Plug 'Yggdroot/indentLine'
+  "Plug 'Yggdroot/indentLine'
   Plug 'tpope/vim-vinegar'
   Plug 'itchyny/lightline.vim'
   Plug 'tpope/vim-fugitive'
