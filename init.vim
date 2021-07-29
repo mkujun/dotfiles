@@ -17,7 +17,7 @@ call plug#end()
 " color
 set termguicolors
 set t_Co=256
-colorscheme base16-default-dark
+colorscheme base16-bright
 
 " folding
 set foldmethod=indent
