@@ -23,7 +23,7 @@ colorscheme base16-bright
 set foldmethod=indent
 set foldlevel=1
 
-" {} motion wont open fold even if it has empty lines in it
+" {} motion won't open fold even if it has empty lines in it
 " also blank lines will be skipped altogether
 nnoremap <expr> } foldclosed(search('^$', 'Wn')) == -1 ? "}" : "}j}"
 nnoremap <expr> { foldclosed(search('^$', 'Wnb')) == -1 ? "{" : "{k{"
@@ -136,6 +136,7 @@ let &colorcolumn=join(range(81, 999),",")     " 80+ columns are indicated differ
 
 "highlight link EndOfBuffer ColorColumn
 
+"statusline setup without plugin, maybe return to this later...
 "function! ActiveStatus()
   "let statusline="" "begining of the statusline
   "let statusline.="%1*" "set statusline group"
@@ -196,6 +197,7 @@ function! HLNext (blinktime)
    redraw
 endfunction
 
+"lightline configuration
 let g:lightline = { 
   \ 'colorscheme': 'wombat',
        \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
