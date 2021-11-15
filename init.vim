@@ -12,16 +12,26 @@ call plug#begin("~/.vim/plugged")
   Plug 'itchyny/lightline.vim'
   Plug 'tpope/vim-fugitive'
   Plug 'blueyed/vim-diminactive/'
+  Plug 'sonph/onehalf', { 'rtp': 'vim' }
 call plug#end()
 
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 " color
-set termguicolors
-set t_Co=256
+"set termguicolors
+"set t_Co=256
 colorscheme base16-bright
+"colorscheme onehalfdark
 
 " folding
 set foldmethod=indent
 set foldlevel=1
+set fillchars=fold:\ 
+set foldtext=CustomFoldText()
 
 " {} motion won't open fold even if it has empty lines in it
 " also blank lines will be skipped altogether
@@ -247,3 +257,30 @@ endfunction
 
 " mapping for the function above
 nmap <Leader>ca :call CloseAllBuffersButCurrent()<CR>
+
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" custom function for folding text markers look
+" https://essais.co/better-folding-in-neovim/
+function! CustomFoldText()
+  let indentation = indent(v:foldstart - 1)
+  let foldSize = 1 + v:foldend - v:foldstart
+  let foldSizeStr = " " . foldSize . " lines " . "--+"
+  let foldLevelStr = "+--"
+  let expansionString = repeat(" ", indentation)
+  return expansionString . foldLevelStr . foldSizeStr
+endfunction
