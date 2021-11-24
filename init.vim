@@ -22,7 +22,7 @@ if exists('+termguicolors')
 endif
 
 let g:lightline = {
-  \ 'colorscheme': 'wombat',
+  \ 'colorscheme': 'everforest',
 \ }
 
 " color
@@ -30,9 +30,11 @@ let g:lightline = {
 "set t_Co=256
 "
 "colorscheme base16-bright
-colorscheme tender
+"colorscheme tender
 "colorscheme OceanicNext
-"colorscheme everforest
+set background=dark
+colorscheme everforest
+let g:everforest_background = 'hard'
 
 " folding
 set foldmethod=indent
