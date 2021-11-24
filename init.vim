@@ -7,12 +7,13 @@ call plug#begin("~/.vim/plugged")
   Plug 'vimwiki/vimwiki'
   Plug 'junegunn/fzf', { 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
-  "Plug 'Yggdroot/indentLine'
   Plug 'tpope/vim-vinegar'
   Plug 'itchyny/lightline.vim'
   Plug 'tpope/vim-fugitive'
   Plug 'blueyed/vim-diminactive/'
-  Plug 'sonph/onehalf', { 'rtp': 'vim' }
+  Plug 'jacoborus/tender.vim'
+  Plug 'mhartington/oceanic-next'
+  Plug 'sainnhe/everforest'
 call plug#end()
 
 if exists('+termguicolors')
@@ -21,11 +22,18 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+\ }
+
 " color
 "set termguicolors
 "set t_Co=256
-colorscheme base16-bright
-"colorscheme onehalfdark
+"
+"colorscheme base16-bright
+colorscheme tender
+"colorscheme OceanicNext
+"colorscheme everforest
 
 " folding
 set foldmethod=indent
@@ -125,12 +133,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-function Highlight_Statusline()
-  hi StatusLineNC guibg=bg
-endfunction
-
-autocmd BufEnter * call Highlight_Statusline()
-
 " vertical split splitting line is the same color as background
 "hi VertSplit guibg=bg
 
@@ -149,51 +151,6 @@ let &colorcolumn=join(range(81, 999),",")     " 80+ columns are indicated differ
 
 "highlight link EndOfBuffer ColorColumn
 
-"statusline setup without plugin, maybe return to this later...
-"function! ActiveStatus()
-  "let statusline="" "begining of the statusline
-  "let statusline.="%1*" "set statusline group"
-  "let statusline.="\ "  "blank space"
-  "let statusline.="\ "  "blank space"
-  "let statusline.="\ "  "blank space"
-  "let statusline.="%2*" "set statusline group 2 for arrow symbol
-  "let statusline.=""
-  "let statusline.="%*" "reset statusline group"
-  "let statusline.="\ "  "blank space"
-  "let statusline.="%f"
-  "let statusline.="\ "  "blank space"
-  "let statusline.="%m" "modifier, indicates '+' sign if file changed "
-  "let statusline.="%y"
-  "let statusline.="%"
-  "return statusline
-"endfunction
-
-"function! InactiveStatus()
-  "let statusline="" "begining of the statusline
-  "let statusline.="\ "  "blank space"
-  "let statusline.="\ "  "blank space"
-  "let statusline.="\ "  "blank space"
-  "let statusline.="\ "  "blank space"
-  "let statusline.="\ "  "blank space"
-  "let statusline.="%f"
-  "let statusline.="\ "  "blank space"
-  "let statusline.="%m" "modifier, indicates '+' sign if file changed "
-  "let statusline.="%y"
-  "let statusline.="%="
-  "return statusline
-"endfunction
-
-set laststatus=2
-"set statusline=%!ActiveStatus()
-"hi User1 guibg=white guifg=black
-"hi User2 guibg=#373b41 guifg=white
-
-augroup status
-  autocmd!
-  "autocmd WinEnter * setlocal statusline=%!ActiveStatus()
-  "autocmd WinLeave * setlocal statusline=%!InactiveStatus()
-augroup END
-
 set noshowmode
 
 " brief blinking in word under the cursor when using '/' search option ('n'
@@ -209,32 +166,6 @@ function! HLNext (blinktime)
    call matchdelete(ring)
    redraw
 endfunction
-
-"lightline configuration
-let g:lightline = { 
-  \ 'colorscheme': 'wombat',
-       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
- \ 'mode_map': {
-        \ 'n' : 'N',
-        \ 'i' : 'I',
-        \ 'R' : 'R',
-        \ 'v' : 'V',
-        \ 'V' : 'VL',
-        \ "\<C-v>": 'VB',
-        \ 'c' : 'C',
-        \ 's' : 'S',
-        \ 'S' : 'SL',
-        \ "\<C-s>": 'SB',
-        \ 't': 'T',
-        \ },
- \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ],
-\ },
-\ 'component_function' : {
-\   'gitbranch': 'FugitiveHead'
-\}
-\ }
 
 set clipboard=unnamedplus " yank also works with system clipboard
 
