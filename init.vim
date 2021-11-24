@@ -4,7 +4,6 @@ call plug#begin("~/.vim/plugged")
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'pangloss/vim-javascript'
   Plug 'maxmellon/vim-jsx-pretty'
-  Plug 'vimwiki/vimwiki'
   Plug 'junegunn/fzf', { 'do': './install --bin' }
   Plug 'junegunn/fzf.vim'
   Plug 'tpope/vim-vinegar'
