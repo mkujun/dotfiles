@@ -13,6 +13,11 @@ call plug#begin("~/.vim/plugged")
   Plug 'jacoborus/tender.vim'
   Plug 'mhartington/oceanic-next'
   Plug 'sainnhe/everforest'
+  Plug 'sainnhe/gruvbox-material'
+  Plug 'sainnhe/sonokai'
+  Plug 'doums/darcula'
+  Plug 'tpope/vim-eunuch'
+  Plug 'AndrewRadev/splitjoin.vim'
 call plug#end()
 
 if exists('+termguicolors')
@@ -22,7 +27,7 @@ if exists('+termguicolors')
 endif
 
 let g:lightline = {
-  \ 'colorscheme': 'everforest',
+  \ 'colorscheme': 'darculaOriginal',
 \ }
 
 " color
@@ -32,9 +37,8 @@ let g:lightline = {
 "colorscheme base16-bright
 "colorscheme tender
 "colorscheme OceanicNext
-set background=dark
-colorscheme everforest
-let g:everforest_background = 'hard'
+"set background=dark
+colorscheme darcula
 
 " folding
 set foldmethod=indent
