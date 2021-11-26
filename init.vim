@@ -34,6 +34,7 @@ let g:lightline = {
 "set termguicolors
 "set t_Co=256
 "
+"various colorschemes I have tested...
 "colorscheme base16-bright
 "colorscheme tender
 "colorscheme OceanicNext
@@ -109,6 +110,7 @@ nnoremap <leader>f :Ag<CR>
 " jump to the first char in a line
 nnoremap <leader>l ^
 
+" indent in brackets
 nnoremap <leader>> >i{
 nnoremap <leader>< <i}
 
@@ -220,3 +222,9 @@ function! CustomFoldText()
   let expansionString = repeat(" ", indentation)
   return expansionString . foldLevelStr . foldSizeStr
 endfunction
+
+" resizing splits
+nnoremap <silent> <Leader>l :vertical resize -5<CR>
+nnoremap <silent> <Leader>h :vertical resize +5<CR>
+nnoremap <silent> <Leader>k :resize +5<CR>
+nnoremap <silent> <Leader>j :resize -5<CR>
