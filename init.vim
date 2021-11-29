@@ -18,6 +18,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'doums/darcula'
   Plug 'tpope/vim-eunuch'
   Plug 'AndrewRadev/splitjoin.vim'
+  Plug 'SirVer/ultisnips'
 call plug#end()
 
 if exists('+termguicolors')
@@ -25,6 +26,9 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+" trigger selected snippet
+let g:UltiSnipsExpandTrigger="<leader><tab>"
 
 let g:lightline = {
   \ 'colorscheme': 'darculaOriginal',
@@ -108,7 +112,7 @@ nnoremap <leader>p :GFiles<CR>
 nnoremap <leader>f :Ag<CR>
 
 " jump to the first char in a line
-nnoremap <leader>l ^
+nnoremap <leader>i ^
 
 " indent in brackets
 nnoremap <leader>> >i{
