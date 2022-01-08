@@ -18,7 +18,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'doums/darcula'
   Plug 'tpope/vim-eunuch'
   Plug 'AndrewRadev/splitjoin.vim'
-  Plug 'SirVer/ultisnips'
+  "Plug 'SirVer/ultisnips'
 call plug#end()
 
 if exists('+termguicolors')
@@ -28,7 +28,11 @@ if exists('+termguicolors')
 endif
 
 " trigger selected snippet
-let g:UltiSnipsExpandTrigger="<leader><tab>"
+" let g:UltiSnipsExpandTrigger="<leader><tab>"
+
+" set cursor in insert mode
+" just testing what is like...
+set guicursor=i:block
 
 let g:lightline = {
   \ 'colorscheme': 'darculaOriginal',
@@ -226,9 +230,3 @@ function! CustomFoldText()
   let expansionString = repeat(" ", indentation)
   return expansionString . foldLevelStr . foldSizeStr
 endfunction
-
-" resizing splits
-nnoremap <silent> <Leader>l :vertical resize -5<CR>
-nnoremap <silent> <Leader>h :vertical resize +5<CR>
-nnoremap <silent> <Leader>k :resize +5<CR>
-nnoremap <silent> <Leader>j :resize -5<CR>
