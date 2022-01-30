@@ -34,6 +34,9 @@ endif
 " just testing what is like...
 set guicursor=i:block
 
+" enable mouse scrolling in vim
+set mouse=a
+
 let g:lightline = {
   \ 'colorscheme': 'darculaOriginal',
 \ }
@@ -63,6 +66,8 @@ nnoremap <expr> { foldclosed(search('^$', 'Wnb')) == -1 ? "{" : "{k{"
 syntax on
 syntax enable
 set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
 set number
 set relativenumber
 
