@@ -30,16 +30,18 @@ endif
 " trigger selected snippet
 " let g:UltiSnipsExpandTrigger="<leader><tab>"
 
+" Y yanks entire line
+" this behavior is changed in neovim 0.6
+" this is the mapping for old way
+" neovim sugestion is to use 'yy'
+nnoremap Y Y
+
 " set cursor in insert mode
 " just testing what is like...
 set guicursor=i:block
 
 " enable mouse scrolling in vim
 set mouse=a
-
-let g:lightline = {
-  \ 'colorscheme': 'darculaOriginal',
-\ }
 
 " color
 "set termguicolors
@@ -50,7 +52,13 @@ let g:lightline = {
 "colorscheme tender
 "colorscheme OceanicNext
 "set background=dark
-colorscheme darcula
+"colorscheme darcula
+colorscheme gruvbox-material
+
+"colorscheme gruvbox_material_background
+let g:lightline = {'colorscheme' : 'gruvbox_material'}
+let g:gruvbox_material_background = 'hard'
+"let g:lightline = {'colorscheme' : 'darculaOriginal'}
 
 " folding
 set foldmethod=indent
