@@ -51,13 +51,18 @@ set mouse=a
 "colorscheme base16-bright
 "colorscheme tender
 "colorscheme OceanicNext
-"set background=dark
 "colorscheme darcula
+if has('termguicolors')
+  set termguicolors
+endif
+set background=dark
+
+let g:gruvbox_material_background = 'hard'
+
 colorscheme gruvbox-material
 
 "colorscheme gruvbox_material_background
 let g:lightline = {'colorscheme' : 'gruvbox_material'}
-let g:gruvbox_material_background = 'hard'
 "let g:lightline = {'colorscheme' : 'darculaOriginal'}
 
 " folding
