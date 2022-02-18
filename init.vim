@@ -34,7 +34,9 @@ endif
 " this behavior is changed in neovim 0.6
 " this is the mapping for old way
 " neovim sugestion is to use 'yy'
-nnoremap Y Y
+if has("nvim")
+  nnoremap Y Y
+endif
 
 " set cursor in insert mode
 " just testing what is like...
