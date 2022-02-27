@@ -64,8 +64,18 @@ let g:gruvbox_material_background = 'hard'
 colorscheme gruvbox-material
 
 "colorscheme gruvbox_material_background
-let g:lightline = {'colorscheme' : 'gruvbox_material'}
+"let g:lightline = {'colorscheme' : 'gruvbox_material'}
 "let g:lightline = {'colorscheme' : 'darculaOriginal'}
+let g:lightline = {
+      \ 'colorscheme': 'gruvbox_material',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 " folding
 set foldmethod=indent
