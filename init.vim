@@ -38,8 +38,7 @@ if has("nvim")
   nnoremap Y Y
 endif
 
-" set cursor in insert mode
-" just testing what is like...
+" set cursor block even in insert mode
 set guicursor=i:block
 
 " enable mouse scrolling in vim
