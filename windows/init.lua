@@ -32,6 +32,12 @@ vim.keymap.set('n', '<S-l>', '<C-W>l')
 vim.keymap.set('n', '<S-j>', '<C-W>j')
 vim.keymap.set('n', '<S-k>', '<C-W>k')
 
+
+-- without this one lsp error marker will move the number column on the left
+vim.cmd[[
+set signcolumn=yes
+]]
+
 vim.cmd [[
   syntax enable
 ]]
@@ -189,5 +195,33 @@ function _G.custom_fold_text()
   return "+--" .. line .. ": " .. line_count .. " lines" .. " --+"
 end
 
--- TODO
--- treesitter
+-- treesitter config
+-- gcc compiler is required
+-- https://www.freecodecamp.org/news/how-to-install-c-and-cpp-compiler-on-windows/
+
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true
+  },
+  indent = {
+    enable = true,
+  },
+  ensure_installed = {
+    "json",
+    "css",
+    "html",
+    "lua",
+    "typescript",
+    "javascript"
+  }
+}
+
+
+-- this is required for nvim-autopairs to work
+require('nvim-autopairs').setup({
+  disable_filetype = { "TelescopePrompt" , "vim" },
+})
+
+-- html and typescript
+require('nvim-ts-autotag').setup()
+

@@ -1,5 +1,9 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  }
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use {
     'nvim-lualine/lualine.nvim',
@@ -25,5 +29,13 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use 'L3MON4D3/LuaSnip'
+
+  use 'windwp/nvim-ts-autotag'
+
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
 end
 )
