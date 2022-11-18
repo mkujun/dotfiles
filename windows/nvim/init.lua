@@ -16,7 +16,7 @@ vim.wo.wrap = false -- no word wrapping
 vim.opt.hidden = true
 vim.opt.tabstop = 2
 vim.opt.foldmethod = 'indent'
-vim.opt.foldlevel = 1
+vim.opt.foldlevel = 99 -- start unfolded
 vim.o.clipboard = "unnamedplus" -- yanking works with system clipboard
 
 -- TODO: put this in mappings.lua
