@@ -33,22 +33,6 @@ vim.keymap.set('n', '<S-j>', '<C-W>j')
 vim.keymap.set('n', '<S-k>', '<C-W>k')
 
 
--- without this one lsp error marker will move the number column on the left
-vim.cmd[[
-set signcolumn=yes
-]]
-
-vim.cmd [[
-  syntax enable
-]]
-
--- colorscheme
-vim.g.gruvbox_material_background = 'hard'
-
-vim.cmd[[
-  colorscheme gruvbox-material
-  syntax on
-]]
 
 ---- nvim config lspconfig -------------------------------------------------------
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -216,7 +200,6 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
-
 -- this is required for nvim-autopairs to work
 require('nvim-autopairs').setup({
   disable_filetype = { "TelescopePrompt" , "vim" },
@@ -225,3 +208,12 @@ require('nvim-autopairs').setup({
 -- html and typescript
 require('nvim-ts-autotag').setup()
 
+vim.opt.signcolumn = 'yes' -- signcolumn for marking warnings from lsp, without this one lsp error marker will move the number column on the left
+
+-- colorscheme
+vim.g.gruvbox_material_background = 'hard'
+
+vim.cmd[[
+  colorscheme gruvbox-material
+  syntax on
+]]
