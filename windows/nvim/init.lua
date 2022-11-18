@@ -18,6 +18,7 @@ vim.opt.tabstop = 2
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevel = 99 -- start unfolded
 vim.o.clipboard = "unnamedplus" -- yanking works with system clipboard
+vim.opt.termguicolors = true
 
 -- TODO: put this in mappings.lua
 vim.g.mapleader = ' ' -- space is leader key
@@ -180,9 +181,6 @@ function _G.custom_fold_text()
 end
 
 -- treesitter config
--- gcc compiler is required
--- https://www.freecodecamp.org/news/how-to-install-c-and-cpp-compiler-on-windows/
-
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true
