@@ -2,6 +2,10 @@ require("plugins")
 require("nvim-tree").setup()
 require('nvim-web-devicons').get_icons() -- devicons requires nerd font (windows install)
 require("lualine").setup()
+require('nvim-autopairs').setup({-- this is required for nvim-autopairs to work
+  disable_filetype = { "TelescopePrompt" , "vim" },
+})
+require('nvim-ts-autotag').setup() -- html and typescript
 
 -- TODO: put this in settings.lua
 vim.opt.tabstop = 2 -- number of spaces for tabs
@@ -19,6 +23,7 @@ vim.opt.foldmethod = 'indent'
 vim.opt.foldlevel = 99 -- start unfolded
 vim.o.clipboard = "unnamedplus" -- yanking works with system clipboard
 vim.opt.termguicolors = true
+vim.opt.signcolumn = 'yes' -- signcolumn for marking warnings from lsp, without this one lsp error marker will move the number column on the left
 
 -- TODO: put this in mappings.lua
 vim.g.mapleader = ' ' -- space is leader key
@@ -32,7 +37,6 @@ vim.keymap.set('n', '<S-h>', '<C-W>h')
 vim.keymap.set('n', '<S-l>', '<C-W>l')
 vim.keymap.set('n', '<S-j>', '<C-W>j')
 vim.keymap.set('n', '<S-k>', '<C-W>k')
-
 
 
 ---- nvim config lspconfig -------------------------------------------------------
@@ -197,16 +201,6 @@ require'nvim-treesitter.configs'.setup {
     "javascript"
   }
 }
-
--- this is required for nvim-autopairs to work
-require('nvim-autopairs').setup({
-  disable_filetype = { "TelescopePrompt" , "vim" },
-})
-
--- html and typescript
-require('nvim-ts-autotag').setup()
-
-vim.opt.signcolumn = 'yes' -- signcolumn for marking warnings from lsp, without this one lsp error marker will move the number column on the left
 
 -- colorscheme
 vim.g.gruvbox_material_background = 'hard'
