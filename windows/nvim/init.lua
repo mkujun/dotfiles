@@ -86,7 +86,7 @@ require('lspconfig')['tsserver'].setup{
 }
 
 -- nvim lspconfig for angular, setting path manually
-local project_library_path = "C:\\Users\\Korisnik\\AppData\\Roaming\\npm\\node_modules\\@angular\\language-server\\bin"
+local project_library_path = "%APPDATA%\\npm\\node_modules\\@angular\\language-server\\bin"
 local cmd = {"ngserver.cmd", "--stdio", "--tsProbeLocations", project_library_path , "--ngProbeLocations", project_library_path}
 
 -- nvim lspconfig for angular
