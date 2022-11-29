@@ -203,9 +203,8 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- colorscheme
-vim.g.gruvbox_material_background = 'hard'
 
 vim.cmd[[
-  colorscheme gruvbox-material
+  colorscheme base16-default-dark
   syntax on
 ]]
