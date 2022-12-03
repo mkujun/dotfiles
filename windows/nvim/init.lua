@@ -8,6 +8,8 @@ require('nvim-autopairs').setup({-- this is required for nvim-autopairs to work
 require('nvim-ts-autotag').setup() -- html and typescript
 
 -- TODO: put this in settings.lua
+vim.opt.backup = false -- don't make backups
+vim.opt.backupcopy = 'no'
 vim.opt.tabstop = 2 -- number of spaces for tabs
 vim.opt.shiftwidth = 2 -- number of spaces for indentation
 vim.opt.cursorline = true
@@ -167,10 +169,13 @@ vim.keymap.set('n', '<leader>f', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
 
 -- different bg color after line 80
+--[[
+
 vim.cmd[[
   set colorcolumn=80
   let &colorcolumn=join(range(81, 999),",")
 ]]
+--]]
 
 vim.opt.foldtext = 'v:lua.custom_fold_text()'
 vim.opt.fillchars = { eob = "-", fold = " " }
@@ -203,8 +208,13 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- colorscheme
+-- colorscheme base16-default-dark
+-- Lua
+require("github-theme").setup({
+  theme_style = "dark_default",
+})
 
 vim.cmd[[
-  colorscheme base16-default-dark
   syntax on
 ]]
+
