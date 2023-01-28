@@ -1,6 +1,6 @@
 require("plugins")
 require("nvim-tree").setup()
-require('nvim-web-devicons').get_icons() -- devicons requires nerd font (windows install)
+--require('nvim-web-devicons').get_icons() -- devicons requires nerd font (windows install)
 require("lualine").setup()
 require('nvim-autopairs').setup({-- this is required for nvim-autopairs to work
   disable_filetype = { "TelescopePrompt" , "vim" },
@@ -160,7 +160,7 @@ vim.opt.completeopt={"menu","menuone","noselect"}
     })
   })
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()) -- Setup lspconfig to work with nvim-cmp
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) -- Setup lspconfig to work with nvim-cmp
 ------- end of nvim-cmp --------------------------------------------------------------------------------------
 
 -- Telescope mappings
@@ -208,13 +208,6 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- colorscheme
--- colorscheme base16-default-dark
--- Lua
 require("github-theme").setup({
   theme_style = "dark_default",
 })
-
-vim.cmd[[
-  syntax on
-]]
-

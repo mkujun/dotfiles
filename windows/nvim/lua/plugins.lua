@@ -1,5 +1,6 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+  use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
