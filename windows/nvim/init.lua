@@ -1,45 +1,12 @@
 require("plugins")
+require("settings")
+require("mappings")
 require("nvim-tree").setup()
---require('nvim-web-devicons').get_icons() -- devicons requires nerd font (windows install)
 require("lualine").setup()
 require('nvim-autopairs').setup({-- this is required for nvim-autopairs to work
   disable_filetype = { "TelescopePrompt" , "vim" },
 })
 require('nvim-ts-autotag').setup() -- html and typescript
-
--- TODO: put this in settings.lua
-vim.opt.backup = false -- don't make backups
-vim.opt.backupcopy = 'no'
-vim.opt.tabstop = 2 -- number of spaces for tabs
-vim.opt.shiftwidth = 2 -- number of spaces for indentation
-vim.opt.cursorline = true
-vim.opt.expandtab = true -- convert tabs to spaces
-vim.wo.number = true -- set numbers
-vim.wo.relativenumber = true -- set relative numbers
-vim.opt.ignorecase = true -- searching is not case sensitive
-vim.opt.smartcase = true -- if pattern contains uppercase then is case sensitive
-vim.wo.wrap = false -- no word wrapping
-vim.opt.hidden = true
-vim.opt.tabstop = 2
-vim.opt.foldmethod = 'indent'
-vim.opt.foldlevel = 99 -- start unfolded
-vim.o.clipboard = "unnamedplus" -- yanking works with system clipboard
-vim.opt.termguicolors = true
-vim.opt.signcolumn = 'yes' -- signcolumn for marking warnings from lsp, without this one lsp error marker will move the number column on the left
-
--- TODO: put this in mappings.lua
-vim.g.mapleader = ' ' -- space is leader key
-vim.keymap.set('n', '<Leader>i', '^') -- leader i jumps to the first char in line
-vim.keymap.set('n', 'Y', 'Y') -- this type of line yanking behavior used to work in older vim versions
-vim.keymap.set('n', '<Leader>t', ':NvimTreeToggle<CR>') -- NvimTreeToggle mapping
-vim.keymap.set('n', '<Leader>n', ':noh<CR>')
-
--- change between splits
-vim.keymap.set('n', '<S-h>', '<C-W>h') 
-vim.keymap.set('n', '<S-l>', '<C-W>l')
-vim.keymap.set('n', '<S-j>', '<C-W>j')
-vim.keymap.set('n', '<S-k>', '<C-W>k')
-
 
 ---- nvim config lspconfig -------------------------------------------------------
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
