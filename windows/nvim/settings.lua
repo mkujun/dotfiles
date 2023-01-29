@@ -16,3 +16,16 @@ vim.opt.foldlevel = 99 -- start unfolded
 vim.o.clipboard = "unnamedplus" -- yanking works with system clipboard
 vim.opt.termguicolors = true
 vim.opt.signcolumn = 'yes' -- signcolumn for marking warnings from lsp, without this one lsp error marker will move the number column on the left
+
+vim.opt.foldtext = 'v:lua.custom_fold_text()'
+vim.opt.fillchars = { eob = "-", fold = " " }
+vim.opt.viewoptions:remove("options")
+
+-- custom folding function
+function _G.custom_fold_text()
+  local line = vim.fn.getline(vim.v.foldstart)
+  local line_count = vim.v.foldend - vim.v.foldstart + 1
+    
+  --return " ⚡ " .. line .. ": " .. line_count .. " lines" .. "-----"
+  return "+--" .. line .. ": " .. line_count .. " lines" .. " --+"
+end

@@ -2,6 +2,7 @@ require("plugins")
 require("settings")
 require("mappings")
 require("nvim-tree").setup()
+require("color")
 require("lualine").setup()
 require('nvim-autopairs').setup({-- this is required for nvim-autopairs to work
   disable_filetype = { "TelescopePrompt" , "vim" },
@@ -130,32 +131,6 @@ vim.opt.completeopt={"menu","menuone","noselect"}
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) -- Setup lspconfig to work with nvim-cmp
 ------- end of nvim-cmp --------------------------------------------------------------------------------------
 
--- Telescope mappings
-vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files<cr>')
-vim.keymap.set('n', '<leader>f', '<cmd>Telescope live_grep<cr>')
-vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
-
--- different bg color after line 80
---[[
-
-vim.cmd[[
-  set colorcolumn=80
-  let &colorcolumn=join(range(81, 999),",")
-]]
---]]
-
-vim.opt.foldtext = 'v:lua.custom_fold_text()'
-vim.opt.fillchars = { eob = "-", fold = " " }
-vim.opt.viewoptions:remove("options")
-
-function _G.custom_fold_text()
-  local line = vim.fn.getline(vim.v.foldstart)
-  local line_count = vim.v.foldend - vim.v.foldstart + 1
-    
-  --return " ⚡ " .. line .. ": " .. line_count .. " lines" .. "-----"
-  return "+--" .. line .. ": " .. line_count .. " lines" .. " --+"
-end
-
 -- treesitter config
 require'nvim-treesitter.configs'.setup {
   highlight = {
@@ -174,7 +149,3 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
--- colorscheme
-require("github-theme").setup({
-  theme_style = "dark_default",
-})
