@@ -1,13 +1,14 @@
 require("plugins")
 require("settings")
 require("mappings")
-require("nvim-tree").setup()
 require("color")
+--require("nvim-tree").setup() -- todo: could be a bit slow...
 require("lualine").setup()
 require('nvim-autopairs').setup({-- this is required for nvim-autopairs to work
   disable_filetype = { "TelescopePrompt" , "vim" },
 })
 require('nvim-ts-autotag').setup() -- html and typescript
+require("treesitter") -- mainly for syntax highlighting
 
 ---- nvim config lspconfig -------------------------------------------------------
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -130,22 +131,3 @@ vim.opt.completeopt={"menu","menuone","noselect"}
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) -- Setup lspconfig to work with nvim-cmp
 ------- end of nvim-cmp --------------------------------------------------------------------------------------
-
--- treesitter config
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true
-  },
-  indent = {
-    enable = true,
-  },
-  ensure_installed = {
-    "json",
-    "css",
-    "html",
-    "lua",
-    "typescript",
-    "javascript"
-  }
-}
-
