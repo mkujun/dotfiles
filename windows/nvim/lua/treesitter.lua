@@ -1,4 +1,3 @@
-
 -- treesitter config
 require'nvim-treesitter.configs'.setup {
   highlight = {
