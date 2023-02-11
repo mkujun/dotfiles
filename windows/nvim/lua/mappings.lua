@@ -10,7 +10,7 @@ vim.keymap.set('n', '<S-l>', '<C-W>l')
 vim.keymap.set('n', '<S-j>', '<C-W>j')
 vim.keymap.set('n', '<S-k>', '<C-W>k')
 
--- Telescope mappings
+-- Telescope mappings -- todo: this could go into separate fuzzyFinder.lua or Telescope.lua file
 vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files<cr>')
-vim.keymap.set('n', '<leader>f', '<cmd>Telescope live_grep<cr>')
+vim.keymap.set('n', '<C-f>', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
