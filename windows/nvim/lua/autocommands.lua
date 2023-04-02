@@ -1,5 +1,5 @@
 local cmd = vim.cmd
 
 cmd[[
-autocmd BufWritePre *.ts Neoformat
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 ]]

@@ -1,8 +1,8 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
-  use 'sbdchd/neoformat'
-  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+  --use 'sbdchd/neoformat'
+  --use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use 'justinmk/vim-dirvish'
   use {
     'nvim-lualine/lualine.nvim',
@@ -16,24 +16,17 @@ return require('packer').startup(function()
   }
 
   use {"tpope/vim-fugitive"}
+
+  use {'neoclide/coc.nvim', branch = 'release'}
+
   --use {"tpope/vim-vinegar"}
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use 'L3MON4D3/LuaSnip'
+  --use 'hrsh7th/cmp-nvim-lsp'
+  --use 'hrsh7th/cmp-buffer'
+  --use 'hrsh7th/cmp-path'
+  --use 'hrsh7th/cmp-cmdline'
+  --use 'hrsh7th/nvim-cmp'
+  --use 'L3MON4D3/LuaSnip'
 
-  use {
-	"windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-  }
-
-  use {
-  'prettier/vim-prettier',
-  run = 'npm install',
-  ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'markdown', 'html'}
-}
 
 end
 )
