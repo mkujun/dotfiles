@@ -30,5 +30,8 @@ return require('packer').startup(function()
     config = function() require("nvim-autopairs").setup {} end
   }
 
+  use {"dstein64/vim-startuptime"}
+  use 'lewis6991/impatient.nvim'
+
 end
 )

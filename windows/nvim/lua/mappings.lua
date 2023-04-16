@@ -5,10 +5,10 @@ vim.keymap.set('n', '<Leader>t', ':NvimTreeToggle<CR>') -- NvimTreeToggle mappin
 vim.keymap.set('n', '<Leader>n', ':noh<CR>')
 
 -- change between splits
-vim.keymap.set('n', '<S-h>', '<C-W>h') 
-vim.keymap.set('n', '<S-l>', '<C-W>l')
-vim.keymap.set('n', '<S-j>', '<C-W>j')
-vim.keymap.set('n', '<S-k>', '<C-W>k')
+vim.keymap.set('n', '<A-h>', '<C-W>h') 
+vim.keymap.set('n', '<A-l>', '<C-W>l')
+vim.keymap.set('n', '<A-j>', '<C-W>j')
+vim.keymap.set('n', '<A-k>', '<C-W>k')
 
 -- Telescope mappings -- todo: this could go into separate fuzzyFinder.lua or Telescope.lua file
 vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files<cr>')
@@ -16,4 +16,3 @@ vim.keymap.set('n', '<C-f>', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
 
 -- open dirvish
---vim.keymap.set('n', 'u', ':Dirvish<CR>')
