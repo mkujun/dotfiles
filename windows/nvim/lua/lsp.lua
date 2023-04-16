@@ -12,6 +12,18 @@ local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
+  -- ovaj dio je dodan kako bi null-ls radio sa prettier-om
+   if client.server_capabilities.documentFormattingProvider then
+                vim.cmd(
+                    [[
+                augroup LspFormatting
+                autocmd! * <buffer>
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.format()
+                augroup END
+                ]]
+                )
+            end
+
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -29,7 +41,8 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  --linija ispod je zakomentirana TODO
+  --vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
 local lsp_flags = {

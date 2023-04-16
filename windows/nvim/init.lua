@@ -8,4 +8,4 @@ require('nvim-autopairs').setup({-- this is required for nvim-autopairs to work
 })
 require("lsp") -- lsp configuration
 require("completion") -- nvim-cmp config
-require("autocommands")
+require("formatting")

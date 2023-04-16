@@ -16,4 +16,4 @@ vim.keymap.set('n', '<C-f>', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
 
 -- open dirvish
-vim.keymap.set('n', 'u', ':Dirvish<CR>')
+--vim.keymap.set('n', 'u', ':Dirvish<CR>')
