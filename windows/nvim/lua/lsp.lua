@@ -74,3 +74,8 @@ require('lspconfig')['angularls'].setup{
   end,
 }
 
+require'lspconfig'.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
