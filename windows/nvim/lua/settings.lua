@@ -16,6 +16,8 @@ vim.opt.foldlevel = 99 -- start unfolded
 vim.o.clipboard = "unnamedplus" -- yanking works with system clipboard
 vim.opt.termguicolors = true
 vim.opt.signcolumn = 'yes' -- signcolumn for marking warnings from lsp, without this one lsp error marker will move the number column on the left
+vim.opt.splitbelow = true -- open horizontal splits below current window
+vim.opt.splitright = true -- open vertical splits to the right of the current window
 
 vim.opt.foldtext = 'v:lua.custom_fold_text()'
 vim.opt.fillchars = { eob = "-", fold = " " }
