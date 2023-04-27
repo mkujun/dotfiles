@@ -25,16 +25,6 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-cmp'
   use 'L3MON4D3/LuaSnip'
 
-  use {'neoclide/coc.nvim', branch = 'release'}
-
-  --use {"tpope/vim-vinegar"}
-  --use 'hrsh7th/cmp-nvim-lsp'
-  --use 'hrsh7th/cmp-buffer'
-  --use 'hrsh7th/cmp-path'
-  --use 'hrsh7th/cmp-cmdline'
-  --use 'hrsh7th/nvim-cmp'
-  --use 'L3MON4D3/LuaSnip'
-
   use {"dstein64/vim-startuptime"}
   use 'lewis6991/impatient.nvim'
 
