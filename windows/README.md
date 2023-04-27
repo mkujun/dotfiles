@@ -1,3 +1,3 @@
-## coc configuration
-
-- coc instead 'native lsp' stuff.. prettier, lsp, speed.. it just works.
+## native lsp config
+# https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+- link with list of lsp servers
