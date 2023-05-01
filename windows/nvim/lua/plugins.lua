@@ -27,6 +27,10 @@ return require('packer').startup(function()
 
   use {"dstein64/vim-startuptime"}
   use 'lewis6991/impatient.nvim'
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
 
 end
 )
