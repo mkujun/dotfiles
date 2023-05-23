@@ -15,4 +15,5 @@ vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files<cr>')
 vim.keymap.set('n', '<C-f>', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
 
--- open dirvish
+-- floating window error diagnostic
+vim.keymap.set('n', '<Leader>e', 'vim.diagnostic.open_float()<CR>')

@@ -31,3 +31,5 @@ function _G.custom_fold_text()
   --return " ⚡ " .. line .. ": " .. line_count .. " lines" .. "-----"
   return "+--" .. line .. ": " .. line_count .. " lines" .. " --+"
 end
+
+vim.diagnostic.config({virtual_text = false}) -- disable inline virtual text error for lsp
