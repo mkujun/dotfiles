@@ -2,7 +2,7 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-  use 'justinmk/vim-dirvish'
+  --use 'justinmk/vim-dirvish'
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -25,11 +25,18 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-cmp'
   use 'L3MON4D3/LuaSnip'
 
-  use {"dstein64/vim-startuptime"}
-  use 'lewis6991/impatient.nvim'
   use {
 	"windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
+  }
+
+  use {"dstein64/vim-startuptime"}
+  use 'lewis6991/impatient.nvim'
+
+  -- packer
+  use {
+      "nvim-telescope/telescope-file-browser.nvim",
+      requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
 
 end

@@ -17,3 +17,18 @@ vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
 
 -- floating window error diagnostic
 vim.keymap.set('n', '<Leader>e', 'vim.diagnostic.open_float()<CR>')
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>fb",
+  ":Telescope file_browser",
+  { noremap = true }
+)
+
+-- open file_browser with the path of the current buffer
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>fb",
+  ":Telescope file_browser path=%:p:h select_buffer=true",
+  { noremap = true }
+)
