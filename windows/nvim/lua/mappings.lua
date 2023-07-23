@@ -3,6 +3,7 @@ vim.keymap.set('n', '<Leader>i', '^') -- leader i jumps to the first char in lin
 vim.keymap.set('n', 'Y', 'Y') -- this type of line yanking behavior used to work in older vim versions
 vim.keymap.set('n', '<Leader>t', ':NvimTreeToggle<CR>') -- NvimTreeToggle mapping
 vim.keymap.set('n', '<Leader>n', ':noh<CR>')
+vim.keymap.set('n', '<Leader>s', ':w<CR>')
 
 -- change between splits
 vim.keymap.set('n', '<A-h>', '<C-W>h') 
