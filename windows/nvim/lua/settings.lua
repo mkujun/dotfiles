@@ -1,3 +1,7 @@
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.opt.backup = false -- don't make backups
 vim.opt.backupcopy = 'no'
 vim.opt.tabstop = 2 -- number of spaces for tabs

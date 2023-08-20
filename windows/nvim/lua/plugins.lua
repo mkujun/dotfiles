@@ -33,6 +33,16 @@ return require('packer').startup(function()
   use {"dstein64/vim-startuptime"}
   use 'lewis6991/impatient.nvim'
 
+  use {
+  'nvim-tree/nvim-tree.lua',
+  requires = {
+    'nvim-tree/nvim-web-devicons', -- optional
+  },
+  config = function()
+    require("nvim-tree").setup {}
+  end
+}
+
   -- packer
   use {
       "nvim-telescope/telescope-file-browser.nvim",
