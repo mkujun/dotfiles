@@ -8,11 +8,11 @@ return require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  use('jose-elias-alvarez/null-ls.nvim') -- mainly for prettier
   use { "EdenEast/nightfox.nvim", tag = "v1.0.0" }
   use { "sainnhe/gruvbox-material" }
+  use { "sainnhe/everforest" }
   use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  'nvim-telescope/telescope.nvim', tag = '0.1.4',
   requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {'nvim-lua/plenary.nvim'}
@@ -33,20 +33,19 @@ return require('packer').startup(function()
   use {"dstein64/vim-startuptime"}
   use 'lewis6991/impatient.nvim'
 
-  use {
-  'nvim-tree/nvim-tree.lua',
-  requires = {
-    'nvim-tree/nvim-web-devicons', -- optional
-  },
-  config = function()
-    require("nvim-tree").setup {}
-  end
-}
-
   -- packer
   use {
       "nvim-telescope/telescope-file-browser.nvim",
       requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  }
+
+  use 'sbdchd/neoformat'
+
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
   }
 
 end
