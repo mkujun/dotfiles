@@ -3,13 +3,15 @@ vim.keymap.set('n', '<Leader>i', '^') -- leader i jumps to the first char in lin
 vim.keymap.set('n', 'Y', 'Y') -- this type of line yanking behavior used to work in older vim versions
 vim.keymap.set('n', '<Leader>t', ':NvimTreeToggle<CR>') -- NvimTreeToggle mapping
 vim.keymap.set('n', '<Leader>n', ':noh<CR>')
-vim.keymap.set('n', '<Leader>s', ':w<CR>')
 
 -- change between splits
 vim.keymap.set('n', '<C-h>', '<C-W>h') 
 vim.keymap.set('n', '<C-l>', '<C-W>l')
 vim.keymap.set('n', '<C-j>', '<C-W>j')
 vim.keymap.set('n', '<C-k>', '<C-W>k')
+
+-- saving
+vim.keymap.set('n', '<leader>s', ':w<CR>')
 
 -- Telescope mappings -- todo: this could go into separate fuzzyFinder.lua or Telescope.lua file
 vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files<cr>')
@@ -27,9 +29,9 @@ vim.api.nvim_set_keymap(
 )
 
 -- open file_browser with the path of the current buffer
--- vim.api.nvim_set_keymap(
-  -- "n",
-  -- "<space>fb",
-  -- ":Telescope file_browser path=%:p:h select_buffer=true",
-  -- { noremap = true }
--- )
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>fb",
+  ":Telescope file_browser path=%:p:h select_buffer=true",
+  { noremap = true }
+)
