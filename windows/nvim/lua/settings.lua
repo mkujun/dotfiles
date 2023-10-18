@@ -1,10 +1,7 @@
--- disable netrw at the very start of your init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 vim.opt.backup = false -- don't make backups
 vim.opt.backupcopy = 'no'
 vim.opt.tabstop = 2 -- number of spaces for tabs
+vim.g.markdown_recommended_style = 0 -- neovim decided to indent markdown files with 4 stops
 vim.opt.shiftwidth = 2 -- number of spaces for indentation
 vim.opt.cursorline = true
 vim.opt.expandtab = true -- convert tabs to spaces
@@ -14,7 +11,6 @@ vim.opt.ignorecase = true -- searching is not case sensitive
 vim.opt.smartcase = true -- if pattern contains uppercase then is case sensitive
 vim.wo.wrap = false -- no word wrapping
 vim.opt.hidden = true
-vim.opt.tabstop = 2
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevel = 99 -- start unfolded
 vim.o.clipboard = "unnamedplus" -- yanking works with system clipboard
@@ -37,3 +33,7 @@ function _G.custom_fold_text()
 end
 
 vim.diagnostic.config({virtual_text = false}) -- disable inline virtual text error for lsp
+
+-- disable netrw, nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
