@@ -31,19 +31,6 @@ require("telescope").setup {
   },
 }
 
---[[
---
-vim.api.nvim_set_keymap(
-  "n",
-  "<space>fb",
-  ":Telescope file_browser",
-  { noremap = true }
-)
---]]
--- To get telescope-file-browser loaded and working with telescope,
--- you need to call load_extension, somewhere after setup function:
--- require("telescope").load_extension "file_browser"
-
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
@@ -59,7 +46,7 @@ require("nvim-tree").setup()
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
-    width = 30,
+    width = 50,
   },
   renderer = {
     group_empty = true,
