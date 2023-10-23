@@ -33,7 +33,3 @@ function _G.custom_fold_text()
 end
 
 vim.diagnostic.config({virtual_text = false}) -- disable inline virtual text error for lsp
-
--- disable netrw, nvim-tree
---vim.g.loaded_netrw = 1
---vim.g.loaded_netrwPlugin = 1
