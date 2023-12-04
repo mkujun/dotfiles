@@ -1,0 +1,14 @@
+" Define the leader key to be space
+let mapleader=\<Space>
+
+" Map <Space>s to save the current file
+nnoremap <Space>s :w<CR>
+
+" Map <Space>i to jump to the beginning of the line
+nnoremap <Space>i ^
+
+nnoremap <Space>n :noh<CR>
+
+set ignorecase
+set hlsearch
+set incsearch
