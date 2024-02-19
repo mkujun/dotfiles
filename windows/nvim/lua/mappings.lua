@@ -20,3 +20,6 @@ vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
 
 -- floating window error diagnostic
 vim.keymap.set('n', '<Leader>e', 'vim.diagnostic.open_float()<CR>')
+
+-- making 'enter' key more reachable
+vim.keymap.set('i', '<C-l>', '<CR>')
