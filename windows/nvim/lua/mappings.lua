@@ -5,10 +5,10 @@ vim.keymap.set('n', '<Leader>t', ':NvimTreeToggle<CR>') -- NvimTreeToggle mappin
 vim.keymap.set('n', '<Leader>n', ':noh<CR>')
 
 -- change between splits
-vim.keymap.set('n', '<C-h>', '<C-W>h') 
-vim.keymap.set('n', '<C-l>', '<C-W>l')
-vim.keymap.set('n', '<C-j>', '<C-W>j')
-vim.keymap.set('n', '<C-k>', '<C-W>k')
+vim.keymap.set('n', '<S-h>', '<C-W>h') 
+vim.keymap.set('n', '<S-l>', '<C-W>l')
+vim.keymap.set('n', '<S-j>', '<C-W>j')
+vim.keymap.set('n', '<S-k>', '<C-W>k')
 
 -- saving
 vim.keymap.set('n', '<leader>s', ':w<CR>')

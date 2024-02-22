@@ -12,3 +12,15 @@ nnoremap <Space>n :noh<CR>
 set ignorecase
 set hlsearch
 set incsearch
+
+" Navigate to the right split
+nnoremap <S-l> <C-w>l
+
+" Navigate to the left split
+nnoremap <S-h> <C-w>h
+
+" Navigate to the upper split
+nnoremap <S-k> <C-w>k
+
+" Navigate to the lower split
+nnoremap <S-j> <C-w>j
