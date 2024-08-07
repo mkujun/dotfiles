@@ -1,6 +1,6 @@
-SetCapsLockState, AlwaysOff
+SetScrollLockState, AlwaysOff
 
-#If GetKeyState("CapsLock", "P")
+#If GetKeyState("ScrollLock", "P")
     h::Left
     j::Down
     k::Up
