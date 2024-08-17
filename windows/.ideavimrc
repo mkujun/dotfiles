@@ -24,6 +24,8 @@ Plug 'machakann/vim-highlightedyank'
 
 let mapleader ="\<Space>"
 nmap <leader>s :w<CR>
+nmap <leader>i ^
+
 nmap <leader>d :action Debug<CR>
 nmap <leader>r :action Run<CR>
 nmap <leader>c :action Stop<CR>
