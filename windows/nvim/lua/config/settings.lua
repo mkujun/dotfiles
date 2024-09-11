@@ -32,4 +32,7 @@ function _G.custom_fold_text()
   return "+--" .. line .. ": " .. line_count .. " lines" .. " --+"
 end
 
-vim.diagnostic.config({virtual_text = false}) -- disable inline virtual text error for lsp
+-- highlight yanked text using the "Visual" highlight group
+vim.cmd[[
+autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.fn['hlexists']('HighlightedyankRegion') > 0 and 'HighlightedyankRegion' or 'IncSearch'), timeout=300}
+]]
