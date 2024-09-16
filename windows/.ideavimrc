@@ -33,3 +33,6 @@ nmap <leader>b :action ToggleLineBreakpoint<CR>
 
 set ignorecase
 set smartcase
+
+" copy to clipboard
+set clipboard+=unnamed
