@@ -1,0 +1,2 @@
+CapsLock::Control
+Control::CapsLock
