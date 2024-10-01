@@ -28,8 +28,12 @@ nmap <leader>i ^
 
 nmap <leader>d :action Debug<CR>
 nmap <leader>r :action Run<CR>
+nmap <leader>n :action Resume<CR>
 nmap <leader>c :action Stop<CR>
 nmap <leader>b :action ToggleLineBreakpoint<CR>
+
+nmap <S-h> :action Back<CR>
+nmap <S-l> :action Forward<CR>
 
 set ignorecase
 set smartcase
