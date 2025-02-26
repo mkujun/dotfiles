@@ -22,6 +22,12 @@ vim.cmd.colorscheme('rose-pine-main') -- color
 vim.opt.foldtext = 'v:lua.custom_fold_text()'
 vim.opt.fillchars = { eob = "-", fold = " " }
 vim.opt.viewoptions:remove("options")
+vim.opt.colorcolumn = "80"
+
+-- black background, looks good with rose-pine colorscheme
+vim.cmd[[
+  hi Normal ctermbg=16 guibg=#000000
+]]
 
 -- custom folding function
 function _G.custom_fold_text()
