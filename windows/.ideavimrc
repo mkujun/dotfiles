@@ -31,6 +31,7 @@ nmap <leader>r :action Run<CR>
 nmap <leader>n :action Resume<CR>
 nmap <leader>c :action Stop<CR>
 nmap <leader>b :action ToggleLineBreakpoint<CR>
+nmap <leader>h :action FileStructurePopup<CR>
 
 nmap <S-h> :action Back<CR>
 nmap <S-l> :action Forward<CR>
