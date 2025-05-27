@@ -18,16 +18,10 @@ vim.opt.termguicolors = true
 vim.opt.signcolumn = 'yes' -- signcolumn for marking warnings from lsp, without this one lsp error marker will move the number column on the left
 vim.opt.splitbelow = true -- open horizontal splits below current window
 vim.opt.splitright = true -- open vertical splits to the right of the current window
-vim.cmd.colorscheme('rose-pine-main') -- color
 vim.opt.foldtext = 'v:lua.custom_fold_text()'
 vim.opt.fillchars = { eob = "-", fold = " " }
 vim.opt.viewoptions:remove("options")
 vim.opt.colorcolumn = "80"
-
--- black background, looks good with rose-pine colorscheme
-vim.cmd[[
-  hi Normal ctermbg=16 guibg=#000000
-]]
 
 -- custom folding function
 function _G.custom_fold_text()
