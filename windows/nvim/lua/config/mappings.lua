@@ -10,7 +10,7 @@ vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files<cr>')
 vim.keymap.set('n', '<C-f>', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
 
-vim.keymap.set('i', '<C-j>', '<ESC>')
+vim.keymap.set('i', '<A-k>', '<ESC>')
 
 -- clear highlight search
 vim.keymap.set('n', '<C-l>', ':noh<CR>')
