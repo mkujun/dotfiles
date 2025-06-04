@@ -36,6 +36,10 @@ nmap <leader>h :action FileStructurePopup<CR>
 nmap <S-h> :action Back<CR>
 nmap <S-l> :action Forward<CR>
 
+
+imap <A-k> <Esc>
+vmap <A-k> <Esc>
+
 set ignorecase
 set smartcase
 
