@@ -11,7 +11,7 @@ vim.keymap.set('n', '<C-f>', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>')
 
 -- esc mapping
-vim.keymap.set({'i', 'v'}, '<A-k>', '<ESC>')
+vim.keymap.set({'i', 'v'}, '<C-k>', '<ESC>')
 
 -- clear highlight search
 vim.keymap.set('n', '<C-l>', ':noh<CR>')
